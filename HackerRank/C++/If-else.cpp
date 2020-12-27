@@ -12,10 +12,10 @@ int main()
     char *arr[10]={"zero","one","two","three","four","five","six","seven","eight","nine"};
     if(n<10)
     {
-        printf("%s",arr[n]);
+        cout<<arr[n]<<endl;
     }
     else {
-    printf("Greater than 9");
+    cout<<"Greater than 9";
     }
     
 
