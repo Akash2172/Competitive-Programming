@@ -28,8 +28,7 @@ int main(void)
                 maj++;
             }
                       
-        }
-               
+        }             
         numDay=ceil(min/(float)d1) + ceil(maj/(float)d1) ;
         arr2[i]=numDay;
 
