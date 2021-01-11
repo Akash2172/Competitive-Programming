@@ -44,9 +44,7 @@ int main()
 	for(int i=0;i<num;i++)
 	{
 		printf("%lld\n",arr[i]);
-	}    
-	
-	
+	}    	
 	return 0;
 }
 
