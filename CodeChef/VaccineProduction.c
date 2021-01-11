@@ -18,7 +18,7 @@ int main()
     	timelap=day1-1;
     	gap=0;
     	
-	}
+    }
    
     
     else if (day2>day1)
