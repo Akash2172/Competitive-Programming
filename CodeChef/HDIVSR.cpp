@@ -14,3 +14,4 @@ int main()
     cout<<out<<'\n';
     return 0;
 }
+
