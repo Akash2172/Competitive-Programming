@@ -24,7 +24,8 @@ void minCoin(ll n , ll x , ll coin[])
         {
             fob(j,0,x)
             {
-                if(i>=coin[j])ans[j]=dp[i-coin[j]] + 1;
+                if(i>=coin[j])
+                ans[j]=dp[i-coin[j]] + 1;
             }
             dp[i]=*min_element(all(ans));
         }     
