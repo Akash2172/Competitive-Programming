@@ -17,6 +17,7 @@ using vs = vector<string>;
 #define pb          push_back
 #define mp          make_pair
  
+
 void solve()
 {
     int n;
