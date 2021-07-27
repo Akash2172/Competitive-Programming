@@ -17,7 +17,6 @@ using vs = vector<string>;
 #define pb          push_back
 #define mp          make_pair
  
- 
 bool possible(vector<ll>v,int n,int cow, int checkMid)
 {
     int placed = v[0];
