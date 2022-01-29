@@ -2,12 +2,23 @@
 using namespace std;
  
 vector<vector<int>>adj(100005);
-vector<bool>visited(100005,0);
+vector<int>dist(100005,-1);
+bool found = false;
  
-void dfs(int cur,int par){
-    visited[cur] = 1;
-    for(auto node:adj[cur]){
-        if(!visited[node])dfs(node,cur);
+ 
+void bfs(int src){
+    queue<int>q;
+    q.push(src);
+    dist[src] = 0;
+    while(!q.empty()){
+        int cur = q.front();
+        q.pop();
+        for(auto node:adj[cur]){
+            if(dist[node]==-1){
+                dist[node] = dist[cur] + 1;
+                q.push(node);
+            }
+        }
     }
 }
  
@@ -23,18 +34,28 @@ int main(){
         adj[a].push_back(b);
         adj[b].push_back(a);
     }
+    bfs(1);
+    if(dist[n]==-1){
+        cout<<"IMPOSSIBLE";
+        return 0;
+    }   
+    int t = n;
     vector<int>ans;
-    for(int i=1;i<=n;i++){
-        if(!visited[i]){
-            ans.push_back(i);
-            dfs(i,-1);
+    ans.push_back(t);
+    while(t!=1){
+        int k = n;
+        int f = t;
+        for(auto node:adj[t]){
+            if(dist[node]<k){
+                k = dist[node];
+                f = node;
+            }
         }
-    }
-    int l = ans.size()-1;
-    cout<<l<<'\n';
-    for(int i=0;i<l;i++){
-        cout<<ans[i]<<" "<<ans[i+1]<<'\n';
-    }
- 
+        t = f;
+        ans.push_back(t);
+    }  
+    cout<<ans.size()<<"\n";
+    reverse(ans.begin(),ans.end());
+    for(int i=0;i<ans.size();i++)cout<<ans[i]<<" ";
     return 0;
 }
